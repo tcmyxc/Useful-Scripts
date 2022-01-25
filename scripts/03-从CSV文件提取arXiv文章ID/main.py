@@ -10,11 +10,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
-    
+
 
 def main():
     output_file = "imbalance.md"  # 输出文件名
-    file_lists = ["2017.csv", "2018.csv", "2019.csv", "2020.csv","2021.csv", "2022.csv"]
+    file_lists = ["2017.csv", "2018.csv", "2019.csv", "2020.csv", "2021.csv",
+                  "2022.csv"]
     for csv_file in file_lists:
         # use `id` column
         arxiv_id = pd.read_csv(csv_file, usecols=[1])
@@ -29,8 +30,7 @@ def main():
                 if len(id) != 10:
                     id += "0"
                 f.write(f"- [{id}]\n")
-        
-    
-        
- 
-main()
+
+
+if __name__ == "__main__":
+    main()
